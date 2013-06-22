@@ -1,6 +1,6 @@
 {
   "name": "hubot-eyebleach",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A hubot script to post an eye cleansing image",
   "main": "./src/eyebleach",
   "scripts": {

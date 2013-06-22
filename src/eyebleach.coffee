@@ -5,10 +5,10 @@
 #   "hubot-eyebleach": "0.0.1"
 #
 # Configuration:
-#   HUBOT_EYECLEANSE_NSFW=true # Pulls from r/gentlemanboners
+#   HUBOT_EYEBLEACH_NSFW=true # Pulls from r/gentlemanboners
 #
 # Commands:
-#   hubot eyecleanse me - post random eye cleansing image
+#   hubot eyebleach me - post random eye cleansing image
 #
 # Notes:
 #   heh heh
@@ -31,7 +31,7 @@ module.exports = (robot) ->
       msg.send url
 
 eyeBleachMe = (cb) ->
-  subreddit = if process.env.HUBOT_EYECLEANSE_NSFW? then "gentlemanboners" else "cute"
+  subreddit = if process.env.HUBOT_EYEBLEACH_NSFW? then "gentlemanboners" else "cute"
   url = "http://www.reddit.com/r/#{subreddit}/top.json?t=week&limit=75"
   request {url: url, json: true}, (err, res, body) ->
     if !err and body and body.data and body.data.children
