@@ -22,6 +22,7 @@ _ = require "underscore"
 
 TrustedDomains = [
   "i.imgur.com",
+  "imgur.com",
   "i.minus.com",
   "i.pgu.me"
 ]
@@ -40,7 +41,14 @@ eyeBleachMe = (cb) ->
     if !err and body and body.data and body.data.children
       entries = validEntries(body.data.children)
       entry = pickRandom(entries)
-      cb(entry.data.url) if entry
+      image = negotiateUrl(entry)
+      cb(image) if entry
+
+negotiateUrl = (entry) ->
+  if entry.data.domain == "imgur.com"
+    "#{entry.data.url}.jpg"
+  else
+    entry.data.url
 
 pickRandom = (entries) ->
   unless _.isEmpty entries
