@@ -6,6 +6,7 @@
 #
 # Configuration:
 #   HUBOT_EYEBLEACH_NSFW=true # Pulls from r/gentlemanboners
+#   HUBOT_EYEBLEACH_RANGE=week # Defaults to week
 #
 # Commands:
 #   hubot eyebleach me - post random eye cleansing image
@@ -31,8 +32,10 @@ module.exports = (robot) ->
       msg.send url
 
 eyeBleachMe = (cb) ->
-  subreddit = if process.env.HUBOT_EYEBLEACH_NSFW? then "gentlemanboners" else "cute"
-  url = "http://www.reddit.com/r/#{subreddit}/top.json?t=week&limit=75"
+  subreddit = if _.isEmpty(process.env.HUBOT_EYEBLEACH_NSFW) then "cute" else "gentlemanboners"
+  range = process.env.HUBOT_EYEBLEACH_RANGE
+  range = "month" if _.isEmpty(range)
+  url = "http://www.reddit.com/r/#{subreddit}/top.json?t=#{range}&limit=50"
   request {url: url, json: true}, (err, res, body) ->
     if !err and body and body.data and body.data.children
       entries = validEntries(body.data.children)
