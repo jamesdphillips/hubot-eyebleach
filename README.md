@@ -4,12 +4,12 @@ A Hubot script for displaying eye cleansing images
 
     hubot eyebleach me # displays random image
 
-## Settings
+### Settings
 
-    HUBOT_EYEBLEACH_NSFW=TRUE # Pulls from r/gentlemanboners
-    HUBOT_EYEBLEACH_RANGE=week # Defaults to week
+    HUBOT_EYEBLEACH_NSFW=TRUE # Pulls from r/gentlemanboners; r/cute by default
+    HUBOT_EYEBLEACH_RANGE=week # Defaults to month
 
-## Installation
+### Installation
 
 1. Edit `package.json` and add `hubot-eyebleach` to the `dependencies` section. It should look something like this:
 
