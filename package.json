@@ -1,0 +1,26 @@
+{
+  "name": "hubot-eyebleach",
+  "version": "0.0.1",
+  "description": "A hubot script to post an eye cleansing image",
+  "main": "./src/eyebleach",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jamesdphillips/hubot-eyebleach.git"
+  },
+  "keywords": [
+    "hubot",
+    "eyebleach"
+  ],
+  "dependencies": {
+    "request": ">= 2.21.0",
+    "underscore": ">= 1.4.4"
+  },
+  "author": "James Phillips",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "7741fa9a45382368bd1a5247efaafd77cec3d6e1"
+}
+
