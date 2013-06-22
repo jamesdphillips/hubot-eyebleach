@@ -26,10 +26,9 @@ TrustedDomains = [
 ]
 
 module.exports = (robot) ->
-  robot.respond /eyecleanse me$/i, (msg) ->
+  robot.respond /eye( )?(bleach|cleanse) me$/i, (msg) ->
     eyeBleachMe (url) ->
       msg.send url
-
 
 eyeBleachMe = (cb) ->
   subreddit = if process.env.HUBOT_EYECLEANSE_NSFW? then "gentlemanboners" else "cute"
