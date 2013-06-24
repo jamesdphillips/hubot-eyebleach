@@ -13,11 +13,14 @@ A Hubot script for displaying eye cleansing images
 
 1. Edit `package.json` and add `hubot-eyebleach` to the `dependencies` section. It should look something like this:
 
-        "dependencies": {
-          "hubot-eyebleach": ">= 0.0.1",
-          ...
-        }
+   ```javascript
+    "dependencies": {
+      "hubot-eyebleach": ">= 0.0.1",
+      ...
+    }
+    ```
 2. Add "hubot-eyebleach" to your `external-scripts.json`. It should look something like this:
 
+    ```javascript
     ["hubot-eyebleach"]
-
+    ```
